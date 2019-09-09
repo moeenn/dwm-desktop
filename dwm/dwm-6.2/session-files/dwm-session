@@ -1,0 +1,9 @@
+#!/bin/sh
+
+xrdb ~/.Xresources &					# set the font and colors
+#xrandr --output DP1 --rotate left --left-of HDMI3 &	# dispay settings
+redshift -O 3500k &						# color temperature
+#pulseaudio -D &						# enable if system uses pulseaudio
+dwmstatus &								# Statusbar
+nm-applet &                             # network manager applet
+exec dwm								# WM (Fallback)
