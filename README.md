@@ -16,3 +16,4 @@ The following tools and cli-applications can be seen in the above screenshots
 * Dzvol - Dzen2 based ALSA volume manager
 * CFiles - CLI File Manager
 * BWM-NG - Network Bandwidth Monitor
+* Tty-Clock - CLI Clock
