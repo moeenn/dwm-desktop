@@ -1,6 +1,6 @@
 // appearance
-static const char *fonts[]					= { "Monospace:size=8" };
-static const char dmenufont[]				= "Monospace:size=8";
+static const char *fonts[]					= { "Cascadia Code:size=9" };
+static const char dmenufont[]				= "Cascadia Code:size=9";
 static const unsigned int borderpx			= 1;
 static const char col_gray1[]				= "#0c0f13";
 static const char col_gray2[]				= "#16181b";
@@ -58,9 +58,9 @@ static const Layout layouts[] = {
 // key definitions (Octal values are keysyms. Find using xev)
 #define MODKEY 			Mod1Mask
 #define WINKEY 			Mod4Mask
-#define RaiseVolume		0x1008ff13
-#define LowerVolume		0x1008ff11
-#define AudioMute		0x1008ff12
+// #define RaiseVolume		0x1008ff13
+// #define LowerVolume		0x1008ff11
+// #define AudioMute		0x1008ff12
 #define TAGKEYS(KEY,TAG) \
 	{ MODKEY,						KEY,	view,			{.ui = 1 << TAG} }, \
 	{ MODKEY|ControlMask,			KEY,	toggleview,		{.ui = 1 << TAG} }, \
@@ -72,36 +72,38 @@ static const Layout layouts[] = {
 
 // commands
 static char dmenumon[2] 		= "0";
-static const char *dmenucmd[]	= { "dmenu_run", "-fn", dmenufont, "-h", "25",
+static const char *dmenucmd[]	= { "dmenu_run", "-fn", dmenufont, "-h", "27",
 									"-nb", col_gray1, "-nf", col_gray3,
 									"-sb", col_cyan, "-sf", col_gray4, NULL };
 
 static const char *termcmd[]	= { "st", NULL };
+static const char *filecmd[] 	= { "thunar", NULL };
 static const char *lock[]		= { "i3lock", "-c", "000000", NULL };
-static const char *startmenu[]	= { "dmenu_startmenu", NULL };
+// static const char *startmenu[]	= { "dmenu_startmenu", NULL };
 
 // volume commands
-static const char *volup[]		= { "dzvol", "-i", "5", "-b", col_gray1,
-									"-f", col_cyan, "-z", col_gray4, "-m",
-									col_gray4, NULL };
+// static const char *volup[]		= { "dzvol", "-i", "5", "-b", col_gray1,
+// 									"-f", col_cyan, "-z", col_gray4, "-m",
+// 									col_gray4, NULL };
 
-static const char *voldown[]	= { "dzvol", "-d", "5", "-b", col_gray1,
-									"-f", col_cyan, "-z", col_gray4, "-m",
-									col_gray4, NULL };
+// static const char *voldown[]	= { "dzvol", "-d", "5", "-b", col_gray1,
+// 									"-f", col_cyan, "-z", col_gray4, "-m",
+// 									col_gray4, NULL };
 
-static const char *voltoggle[]	= { "dzvol", "-t", "toggle", "-b", col_gray1,
-									"-f", col_cyan, "-z", col_gray4, "-m",
-									col_gray4, NULL };
+// static const char *voltoggle[]	= { "dzvol", "-t", "toggle", "-b", col_gray1,
+// 									"-f", col_cyan, "-z", col_gray4, "-m",
+// 									col_gray4, NULL };
 
 static Key keys[] = {
 	// modifier				key				function		argument
 	{ MODKEY,				XK_p,			spawn,			{.v = dmenucmd } },
 	{ WINKEY,				XK_t,			spawn,			{.v = termcmd } },
+	{ WINKEY,				XK_e,			spawn,			{.v = filecmd } },
 	{ WINKEY,				XK_l,			spawn,			{.v = lock } },
-	{ 0,					XK_F1,			spawn,			{.v = startmenu } },
-	{ 0,					RaiseVolume,	spawn,			{.v = volup } },
-	{ 0,					LowerVolume,	spawn,			{.v = voldown } },
-	{ 0,					AudioMute,		spawn,			{.v = voltoggle } },
+	// { 0,					XK_F1,			spawn,			{.v = startmenu } },
+	// { 0,					RaiseVolume,	spawn,			{.v = volup } },
+	// { 0,					LowerVolume,	spawn,			{.v = voldown } },
+	// { 0,					AudioMute,		spawn,			{.v = voltoggle } },
 	{ MODKEY,				XK_b,			togglebar,		{0} },
 //	{ MODKEY,				XK_w,			tabmode,		{-1} },
 	{ MODKEY,				XK_Tab,			focusstack,		{.i = +1 } },
@@ -124,6 +126,10 @@ static Key keys[] = {
 //	{ MODKEY,				XK_period,		focusmon,		{.i = +1 } },
 //	{ MODKEY|ShiftMask,		XK_comma,		tagmon,			{.i = -1 } },
 //	{ MODKEY|ShiftMask,		XK_period,		tagmon,			{.i = +1 } },
+	{ MODKEY|ControlMask,	XK_Left,   		viewtoleft,     {0} },
+	{ MODKEY|ControlMask,	XK_Right,  		viewtoright,    {0} },
+	{ MODKEY|ShiftMask,     XK_Left,   		tagtoleft,      {0} },
+	{ MODKEY|ShiftMask,     XK_Right,  		tagtoright,     {0} },
 	TAGKEYS(				XK_1,			0)
 	TAGKEYS(				XK_2,			1)
 	TAGKEYS(				XK_3,			2)

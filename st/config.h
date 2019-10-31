@@ -5,8 +5,8 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Monospace:Bold:size=9:antialias=true:autohint=false";
-static int borderpx = 5;
+static char *font = "Cascadia Code:Regular:size=10:antialias=true:autohint=false";
+static int borderpx = 0;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -16,7 +16,7 @@ static int borderpx = 5;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/usr/bin/mksh";
+static char *shell = "/usr/bin/bash";
 char *utmp = NULL;
 char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
 
@@ -172,7 +172,7 @@ static unsigned int defaultattr = 11;
  * Beware that overloading Button1 will disable the selection.
 */
 static MouseShortcut mshortcuts[] = {
-	// button               mask            string 
+	// button               mask            string
 //	{ Button4,              XK_NO_MOD,      "\031" },
 //	{ Button5,              XK_NO_MOD,      "\005" },
 };

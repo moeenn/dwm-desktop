@@ -25,8 +25,7 @@ int readInt(char *input) {
 }
 
 int separator(char *status, size_t size) {
-    char sepa[1] = "|";
-    return snprintf(status, size, "  %s", sepa);
+    return snprintf(status, size, "  |");
 }
 
 int getdatetime(char *status, size_t size) {
@@ -72,7 +71,7 @@ int main(void) {
 
     for (;;sleep(2)) {
         l = getbattery(status, sizeof(status) - l);
-        l += separator(status + l, sizeof(status) - l);        
+        l += separator(status + l, sizeof(status) - l);
         l += getdatetime(status + l, sizeof(status) - l);
         l += separator(status + l, sizeof(status) - l);
 
@@ -84,4 +83,3 @@ int main(void) {
 
     return 0;
 }
-
