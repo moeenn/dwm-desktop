@@ -35,7 +35,7 @@ static const int barpadding					= 12;				// bar vertical padding
 static const int topbar						= 1;				// 0 means bottom bar
 
 // tags
-static const char *tags[] = { " 01 ", " 02 ", " 03 ", " 04 " };
+static const char *tags[] = { " 01 ", " 02 ", " 03 ", " 04 ", " 05 ", " 06 ", " 07 ", " 08 " };
 
 static const Rule rules[] = {
 	// class 		instance	title		tags mask	isfloating	monitor
@@ -134,6 +134,10 @@ static Key keys[] = {
 	TAGKEYS(				XK_2,			1)
 	TAGKEYS(				XK_3,			2)
 	TAGKEYS(				XK_4,			3)
+	TAGKEYS(				XK_5,			4)
+	TAGKEYS(				XK_6,			5)
+	TAGKEYS(				XK_7,			6)
+	TAGKEYS(				XK_8,			7)
 	{ MODKEY|ShiftMask,		XK_q,			quit,			{0} },
 };
 
