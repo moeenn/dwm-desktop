@@ -3,7 +3,10 @@
 xrdb ~/.Xresources &					# set the font and colors
 #xrandr --output DP1 --rotate left --left-of HDMI3 &	# dispay settings
 redshift -O 3500k &						# color temperature
+feh --bg-scale $HOME/Pictures/current-* & 		# set the wallpaper
+# xset b off &							# turn off beep
 #pulseaudio -D &						# enable if system uses pulseaudio
+compton & 								# compositing
 dwmstatus &								# Statusbar
-nm-applet &                             # network manager applet
-exec dwm								# WM (Fallback)
+nm-applet &								# network manager applet
+exec dwm 								# WM

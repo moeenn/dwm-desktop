@@ -1,8 +1,0 @@
-[Desktop Entry]
-Version=1.0
-Name=Dwm Desktop
-Comment=Use this session to run DWM
-Exec=/usr/local/bin/dwm-session
-Icon=
-Type=Application
-DesktopNames=DWM

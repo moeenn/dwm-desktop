@@ -25,7 +25,7 @@ int readInt(char *input) {
 }
 
 int separator(char *status, size_t size) {
-    return snprintf(status, size, "  |");
+    return snprintf(status, size, "  •");
 }
 
 int getdatetime(char *status, size_t size) {

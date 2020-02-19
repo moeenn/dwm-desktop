@@ -4,3 +4,7 @@ dwmstatus: status.c
 
 clean:
 	rm dwmstatus
+
+install:
+	@echo "Installing ..."
+	sudo cp -f dwmstatus /usr/local/bin/dwmstatus

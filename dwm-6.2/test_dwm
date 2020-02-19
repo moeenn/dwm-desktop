@@ -1,0 +1,2 @@
+#! /bin/sh
+startx ./session-files/dwm-session -- /usr/bin/Xephyr -fullscreen -noreset &
