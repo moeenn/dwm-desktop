@@ -7,4 +7,4 @@ clean:
 
 install:
 	@echo "Installing ..."
-	sudo cp -f dwmstatus /usr/local/bin/dwmstatus
+	cp -f dwmstatus /usr/local/bin/dwmstatus

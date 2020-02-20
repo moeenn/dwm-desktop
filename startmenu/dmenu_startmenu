@@ -11,6 +11,6 @@ chromium-browser
 thunar
 subl
 gimp"
-result=$(echo "$actions" | dmenu -h 25 -i -b )
+result=$(echo "$actions" | dmenu -h 30 -i -b )
 cmd=$(echo "$result")
 [ -n "$cmd" ] && eval setsid setsid "$cmd"

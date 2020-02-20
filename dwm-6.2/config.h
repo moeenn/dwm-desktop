@@ -3,13 +3,9 @@
 /* appearance */
 static const unsigned int borderpx  = 0;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
-static const unsigned int systrayspacing = 2;   /* systray spacing */
-static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
-static const int showsystray        = 1;     /* 0 means no systray */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
-static const int barpadding			= 8;
+static const int barpadding			= 13;
 static const char *fonts[]          = { "Cascadia Code:size=10" };
 static const char dmenufont[]       = "Cascadia Code:size=10";
 static const char col_gray1[]       = "#232323";  /* normal bg */
@@ -24,7 +20,7 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
-static const char *tags[] = { "1: web", "2: term", "3: text", "4: fm", "5: misc", "6", "7", "8", "9" };
+static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
 static const Rule rules[] = {
 	/* xprop(1):
@@ -43,9 +39,9 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[M]",      monocle },
-	{ "[=]",      tile },    /* first entry is default */
-	{ "[~]",      NULL },    /* no layout function means floating behavior */
+	{ "(M)",      monocle },
+	{ "(=)",      tile },    /* first entry is default */
+	{ "(~)",      NULL },    /* no layout function means floating behavior */
 };
 
 /* key definitions */
@@ -62,7 +58,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-b", "-nb", col_gray1, "-nf", col_gray2, "-sb", col_cyan, "-sf", col_gray1, "-h", "25", NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-fn", dmenufont, "-b", "-nb", col_gray1, "-nf", col_gray2, "-sb", col_cyan, "-sf", col_gray1, "-h", "30", NULL };
 static const char *startcmd[] = { "dmenu_startmenu", NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *lockcmd[]  = { "i3lock", "-c", "000000", "-e", "-f", NULL };
@@ -82,8 +78,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
 	{ MODKEY,                       XK_equal,  incnmaster,     {.i = +1 } },
 	{ MODKEY,                       XK_minus,  incnmaster,     {.i = -1 } },
-	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
-	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
+	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.03} },
+	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.03} },
 	{ MODKEY,                       XK_Return, zoom,           {0} },
 	// { MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_F4,      killclient,     {0} },
@@ -125,4 +121,3 @@ static Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-

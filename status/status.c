@@ -25,7 +25,7 @@ int readInt(char *input) {
 }
 
 int separator(char *status, size_t size) {
-    return snprintf(status, size, "  •");
+    return snprintf(status, size, " • ");
 }
 
 int getdatetime(char *status, size_t size) {
@@ -35,13 +35,13 @@ int getdatetime(char *status, size_t size) {
     result = time(NULL);
     resulttm = localtime(&result);
 
-    return strftime(status, size, "  %A - %H.%M", resulttm);
+    return strftime(status, size, " %H.%M ", resulttm);
 }
 
 int getbattery(char *status, size_t size) {
     FILE *fd;
     int now, full, bat;
-    char stat[12];
+    // char stat[12];
 
     fd = fopen("/sys/class/power_supply/BAT0/charge_now", "r");
     fscanf(fd, "%d", &now);
@@ -51,13 +51,12 @@ int getbattery(char *status, size_t size) {
     fscanf(fd, "%d", &full);
     fclose(fd);
 
-    fd = fopen("/sys/class/power_supply/BAT0/status", "r");
-    fscanf(fd, "%s", stat);
-    fclose(fd);
+    // fd = fopen("/sys/class/power_supply/BAT0/status", "r");
+    // fscanf(fd, "%s", stat);
+    // fclose(fd);
 
     bat = 100 * now / full;
-
-    return snprintf(status, size, "  %s - %d%%", stat, bat);
+   	return snprintf(status, size, " %s %d%% ", "♥", bat);
 }
 
 int main(void) {
@@ -73,7 +72,6 @@ int main(void) {
         l = getbattery(status, sizeof(status) - l);
         l += separator(status + l, sizeof(status) - l);
         l += getdatetime(status + l, sizeof(status) - l);
-        l += separator(status + l, sizeof(status) - l);
 
         setstatus(status);
     }
