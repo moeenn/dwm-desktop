@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *font = "Cascadia Code:Regular:size=10:antialias=true:autohint=false";
-static int borderpx = 0;
+static int borderpx = 15;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -96,40 +96,57 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
+	"#1d2021",
+	"#cc241d",
+	"#98971a",
+	"#d79921",
+	"#458588",
+	"#b16286",
+	"#689d6a",
+	"#a89984",
 
-  /* 8 normal colors */
-  [0] = "#121417", /* black   */
-  [1] = "#8fa1b3", /* red     */
-  [2] = "#769070", /* green   */
-  [3] = "#4f5b66", /* yellow  */
-  [4] = "#607a86", /* blue    */
-  [5] = "#80757e", /* magenta */
-  [6] = "#60867f", /* cyan    */
-  [7] = "#deded6", /* white   */
+	"#928374",
+	"#fb4934",
+	"#b8bb26",
+	"#fabd2f",
+	"#83a598",
+	"#d3869b",
+	"#8ec07c",
+	"#ebdbb2",
 
-  /* 8 bright colors */
-  [8]  = "#4c5356", /* black   */
-  [9]  = "#8fa1b3", /* red     */
-  [10] = "#769070", /* green   */
-  [11] = "#4f5b66", /* yellow  */
-  [12] = "#607a86", /* blue    */
-  [13] = "#80757e", /* magenta */
-  [14] = "#60867f", /* cyan    */
-  [15] = "#deded6", /* white   */
+  // /* 8 normal colors */
+  // [0] = "#121417", /* black   */
+  // [1] = "#8fa1b3", /* red     */
+  // [2] = "#769070", /* green   */
+  // [3] = "#4f5b66", /* yellow  */
+  // [4] = "#607a86", /* blue    */
+  // [5] = "#80757e", /* magenta */
+  // [6] = "#60867f", /* cyan    */
+  // [7] = "#deded6", /* white   */
 
-  /* special colors */
-  [256] = "#121417", /* background */
-  [257] = "#c0c0b8", /* foreground */
+  // /* 8 bright colors */
+  // [8]  = "#4c5356",  black
+  // [9]  = "#8fa1b3", /* red     */
+  // [10] = "#769070", /* green   */
+  // [11] = "#4f5b66", /* yellow  */
+  // [12] = "#607a86", /* blue    */
+  // [13] = "#80757e", /* magenta */
+  // [14] = "#60867f", /* cyan    */
+  // [15] = "#deded6", /* white   */
+
+  // /* special colors */
+  // [256] = "#121417", /* background */
+  // [257] = "#c0c0b8", /* foreground */
 };
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor
  */
-unsigned int defaultfg = 257;
-unsigned int defaultbg = 256;
-static unsigned int defaultcs = 257;
-static unsigned int defaultrcs = 257;
+unsigned int defaultfg = 15;
+unsigned int defaultbg = 0;
+static unsigned int defaultcs = 15;
+static unsigned int defaultrcs = 15;
 
 /*
  * Colors used, when the specific fg == defaultfg. So in reverse mode this
