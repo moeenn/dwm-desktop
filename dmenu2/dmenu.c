@@ -230,9 +230,9 @@ read_resourses(void) {
 	if( normfgcolor == NULL )
 		normfgcolor = "#808080";
 	if( selbgcolor == NULL )
-		selbgcolor  = "#98971a";
+		selbgcolor  = "#292f2f";
 	if( selfgcolor == NULL )
-		selfgcolor  = "#111313";
+		selfgcolor  = "#808080";
 	if( dimcolor == NULL )
 		dimcolor = "#000000";
 	if( !opacity )
