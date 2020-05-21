@@ -1,6 +1,5 @@
 # dwm version
 VERSION = 6.2
-
 # Customize below to fit your system
 
 # paths
@@ -36,4 +35,3 @@ LDFLAGS  = ${LIBS}
 
 # compiler and linker
 CC = cc
-
