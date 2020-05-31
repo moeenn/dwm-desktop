@@ -226,15 +226,15 @@ read_resourses(void) {
 	}
 	/* Set default colors if they are not set */
 	if( normbgcolor == NULL )
-		normbgcolor = "#111313";
+		normbgcolor = "#181312";
 	if( normfgcolor == NULL )
-		normfgcolor = "#808080";
+		normfgcolor = "#eddcd3";
 	if( selbgcolor == NULL )
-		selbgcolor  = "#292f2f";
+		selbgcolor  = "#252525";
 	if( selfgcolor == NULL )
-		selfgcolor  = "#808080";
+		selfgcolor  = "#eddcd3";
 	if( dimcolor == NULL )
-		dimcolor = "#000000";
+		dimcolor = "#3c3936";
 	if( !opacity )
 		opacity = 1.0;
 }

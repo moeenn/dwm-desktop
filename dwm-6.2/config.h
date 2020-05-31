@@ -9,15 +9,16 @@ static const int barpadding			= 23;
 static const int focusonwheel       = 0;
 static const char *fonts[]          = { "Cascadia Code:size=10" };
 static const char dmenufont[]       = "Cascadia Code:size=10";
-static const char col_gray1[]       = "#1d2021";  /* normal bg */
-static const char col_gray2[]       = "#b8b9a7";  /* normal fg */
-static const char col_gray3[]       = "#5a5a5a";  /* dull fg */
-static const char col_cyan[]        = "#22272c";  /* accent color */
+static const char bg_normal[]       = "#181312";  /* normal bg */
+static const char fg_normal[]       = "#eddcd3";  /* normal fg */
+static const char sel_bg[]			= "#252525";
+static const char col_gray3[]       = "#3c3936";  /* dull fg */
+static const char col_cyan[]        = "#a5af86";  /* accent color */
 static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm] = { col_gray2, col_gray1, col_gray1 },
-	[SchemeSel]  = { col_gray2, col_cyan,  col_cyan },
-	[SchemeDull] = { col_gray3, col_gray1, col_gray1 },
+	/*               fg         	bg         		border   */
+	[SchemeNorm] = { fg_normal, 	bg_normal, 		bg_normal 	},
+	[SchemeSel]  = { fg_normal,  	sel_bg,		  	col_cyan 	},
+	[SchemeDull] = { col_gray3, 	bg_normal, 		bg_normal 	},
 };
 
 /* tagging */
