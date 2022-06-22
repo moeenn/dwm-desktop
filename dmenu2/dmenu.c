@@ -18,7 +18,7 @@
                              * MAX(0, MIN((y)+(h),(r).y_org+(r).height) - MAX((y),(r).y_org)))
 #define MIN(a,b)              ((a) < (b) ? (a) : (b))
 #define MAX(a,b)              ((a) > (b) ? (a) : (b))
-#define DEFFONT "Cascadia Code:size=10" /* xft example: "Monospace-11" */
+#define DEFFONT "Cascadia Code:size=9" /* xft example: "Monospace-11" */
 
 typedef struct Item Item;
 struct Item {
@@ -226,15 +226,15 @@ read_resourses(void) {
 	}
 	/* Set default colors if they are not set */
 	if( normbgcolor == NULL )
-		normbgcolor = "#181312";
+		normbgcolor = "#282A2E";
 	if( normfgcolor == NULL )
-		normfgcolor = "#eddcd3";
+		normfgcolor = "#C5C8C6";
 	if( selbgcolor == NULL )
-		selbgcolor  = "#252525";
+		selbgcolor  = "#373B41";
 	if( selfgcolor == NULL )
-		selfgcolor  = "#eddcd3";
+		selfgcolor  = "#F0C674";
 	if( dimcolor == NULL )
-		dimcolor = "#3c3936";
+		dimcolor = "#707880";
 	if( !opacity )
 		opacity = 1.0;
 }
