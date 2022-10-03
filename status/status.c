@@ -72,9 +72,9 @@ int getbattery(char *status, size_t size) {
     fclose(fd);
 
     bat = 100 * now / full;
-    return (strcmp(stat, "Discharging") == 0) ?
-   		snprintf(status, size, " %s %d%% ", "♥", bat) :        // discharging
-        snprintf(status, size, " %s %d%%+ ", "♥", bat);        // charging
+    return (strcmp(stat, "Discharging") == 0) 
+      ? snprintf(status, size, " %s %d%% ", "♥", bat) 
+      : snprintf(status, size, " %s %d%%+ ", "♥", bat); 
 }
 
 int main(void) {
