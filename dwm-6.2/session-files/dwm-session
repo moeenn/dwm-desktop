@@ -5,8 +5,7 @@ xrdb ~/.Xresources &					# set the font and colors
 #xset b off &							# turn off beep
 #pulseaudio -D &						# enable if system uses pulseaudio
 redshift -O 3500k &						# color temperature
-hsetroot -solid "#303030" &		 		# set the wallpaper
+hsetroot -solid "#000000" &		 		# set the wallpaper
 compton & 								# compositing
 dwmstatus &								# Statusbar
-xbindkeys & 							# common keyboard shortcuts
 exec dwm 								# WM
