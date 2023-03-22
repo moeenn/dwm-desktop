@@ -4,7 +4,6 @@ xrdb ~/.Xresources &					# set the font and colors
 #xrandr --output DP1 --rotate left --left-of HDMI3 &	# dispay settings
 #xset b off &							# turn off beep
 #pulseaudio -D &						# enable if system uses pulseaudio
-redshift -O 3500k &						# color temperature
 hsetroot -solid "#000000" &		 		# set the wallpaper
 compton & 								# compositing
 dwmstatus &								# Statusbar
