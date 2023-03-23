@@ -51,7 +51,7 @@ int getdatetime(char *status, size_t size) {
     result = time(NULL);
     resulttm = localtime(&result);
 
-    return strftime(status, size, " %H.%M  ", resulttm);
+    return strftime(status, size, " %b %d, %H:%M  ", resulttm);
 }
 
 int getbattery(char *status, size_t size) {

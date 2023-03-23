@@ -12,13 +12,13 @@ static const char dmenufont[]       = "JetBrains Mono:size=10";
 static const char bg_normal[]       = "#232323";  /* normal bg */
 static const char fg_normal[]       = "#F7F7F7";  /* normal fg */
 static const char sel_bg[]					= "#303030";
-static const char col_gray3[]       = "#707880";  /* dull fg */
-static const char col_cyan[]        = "#E95420";  /* accent color */
+static const char fg_dim[]       		= "#707880";  /* dull fg */
+static const char bg_accent[]       = "#FDA53B";  /* accent color */
 static const char *colors[][3]      = {
 	/*               fg         	bg         		border   */
 	[SchemeNorm] = { fg_normal, 	bg_normal, 		bg_normal 	},
-	[SchemeSel]  = { col_cyan,  	sel_bg,		  	sel_bg 	},
-	[SchemeDull] = { col_gray3, 	bg_normal, 		bg_normal 	},
+	[SchemeSel]  = { bg_accent,  	sel_bg,		  	sel_bg 			},
+	[SchemeDull] = { fg_dim, 			bg_normal, 		bg_normal 	},
 };
 
 /* tagging */
@@ -61,11 +61,12 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "run", NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *lockcmd[]  = { "i3lock", "-c", "000000", "-e", "-f", NULL };
+static const char *lockcmd[]  = { "i3lock", "-c", "000000", NULL };
 static const char *filecmd[]  = { "thunar", NULL };
 static const char *brightupcmd[]  = { "xbacklight", "-inc", "5", NULL };
 static const char *brightdowncmd[]  = { "xbacklight", "-dec", "5", NULL };
 static const char *killcmd[]  = { "xkill", NULL };
+static const char *scrotcmd[]  = { "gnome-screenshot", "-i", NULL };
 
 static Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -95,7 +96,7 @@ static Key keys[] = {
 	{ 0,                       			XF86XK_MonBrightnessUp,      spawn,          {.v = brightupcmd } },
 	{ 0,                       			XF86XK_MonBrightnessDown,      spawn,          {.v = brightdowncmd } },
 	{ MODKEY|ShiftMask,        			XK_Delete,      spawn,          {.v = killcmd } },
-	// { 0,                            XK_F1,     spawn,          {.v = startcmd } },
+	{ 0,                            XK_Print,     spawn,          {.v = scrotcmd } },
 	// { MODKEY,                       XK_Tab,    view,           {0} },
 	// { MODKEY,                       XK_space,  setlayout,      {0} },
 	// { MODKEY,                       XK_0,      view,           {.ui = ~0 } },
