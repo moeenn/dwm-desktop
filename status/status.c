@@ -24,22 +24,6 @@ void setstatus(char *str) {
 //     return val;
 // }
 
-// get download speed
-// int getdownspeed(char *status, size_t size, int* last_read, int* delay) {
-//     int current_total = readInt("/sys/class/net/wlp3s0/statistics/rx_bytes");
-//     int speed = (current_total - *last_read) / (*delay * 1024);
-//     *last_read = current_total;
-//     return snprintf(status, size, " %d Kb/s ", speed);
-// }
-
-// // get upload speed
-// int getupspeed(char *status, size_t size, int* last_read, int* delay) {
-//     int current_total = readInt("/sys/class/net/wlp3s0/statistics/tx_bytes");
-//     int speed = (current_total - *last_read) / (*delay * 1024);
-//     *last_read = current_total;
-//     return snprintf(status, size, " %d Kb/s ", speed);
-// }
-
 int separator(char *status, size_t size) {
     return snprintf(status, size, " • ");
 }
@@ -81,8 +65,6 @@ int main(void) {
     char status[100];
     int l = 0;
     int delay = 2;
-    // int last_rxread = 0;
-    // int last_txread = 0;
 
     if (!(dpy = XOpenDisplay(NULL))) {
         fprintf(stderr, "Cannot open display.\n");
@@ -90,9 +72,6 @@ int main(void) {
     }
 
     for (;;sleep(delay)) {
-        // l = getdownspeed(status, sizeof(status) - l, &last_rxread, &delay);
-        // l += getdownspeed(status + l, sizeof(status) - l, &last_txread, &delay);
-        // l += separator(status + l, sizeof(status) - l);
         l = getbattery(status, sizeof(status) - l);
         l += separator(status + l, sizeof(status) - l);
         l += getdatetime(status + l, sizeof(status) - l);
