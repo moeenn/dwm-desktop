@@ -26,9 +26,16 @@ static const Rule rules[] = {
 	/* xprop(1):
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
+	 *  tag mask value of '1 << 4' means window will open on tag on 5 (index 4)
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gcolor3",  NULL,       NULL,       0,            1,           -1 },
+	/* class      				instance    title       tags mask     isfloating   monitor */
+	{ "Gcolor3",  				NULL,       NULL,       0,            1,           -1 },
+	{ "Gnome-screenshot", NULL,    		NULL,       0,            1,           -1 },	
+	{ "Pavucontrol", 			NULL,    		NULL,       0,            1,           -1 },	
+	{ "Lxrandr", 					NULL,    		NULL,       0,            1,           -1 },
+	{ "WebWork Tracker", 	NULL,    		NULL,       1 << 5,       1,           -1 },
+	{ "Lxappearance", 		NULL,			NULL,		0, 		1, 	-1},
+	{ "Matplotlib", 		NULL,			NULL,		0, 		1, 	-1},
 };
 
 /* layout(s) */
@@ -82,7 +89,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_minus,  									incnmaster,     	{.i = -1 } },
 	{ MODKEY,                       XK_h,      									setmfact,       	{.f = -0.03} },
 	{ MODKEY,                       XK_l,      									setmfact,       	{.f = +0.03} },
-	{ MODKEY,                       XK_Return, 									zoom,           	{0} },
 	{ MODKEY,						            XK_F4,     									killclient,     	{0} },
 	{ MODKEY|ShiftMask,             XK_m,      									setlayout,      	{.v = &layouts[0]} },
 	{ MODKEY|ShiftMask,             XK_t,      									setlayout,      	{.v = &layouts[1]} },
