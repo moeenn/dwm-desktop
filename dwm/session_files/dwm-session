@@ -1,10 +1,16 @@
 #!/bin/sh
 
-xrdb ~/.Xresources &					# set the font and colors
-#xrandr --output DP1 --rotate left --left-of HDMI3 &	# dispay settings
-#xset b off &							# turn off beep
-#pulseaudio -D &						# enable if system uses pulseaudio
-hsetroot -solid "#000000" &		 		# set the wallpaper
-compton & 								# compositing
-dwmstatus &								# Statusbar
-exec dwm 								# WM
+# basic session settings
+xrdb ~/.Xresources &
+compton &
+#xrandr --output DP1 --rotate left --left-of HDMI3 &
+#xset b off &
+#pulseaudio -D &
+
+# wallpaper
+# hsetroot -solid "#000000" &		 	
+feh --bg-fill $HOME/Pictures/wallpaper.jpg &
+
+# window manager
+dwmstatus &
+exec dwm

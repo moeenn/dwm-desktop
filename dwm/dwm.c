@@ -729,11 +729,6 @@ drawbar(Monitor *m)
 			: (occ & 1 << i) ? SchemeNorm : SchemeDull ]
 		);
 		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
-		// if (occ & 1 << i) {
-			// drw_rect(drw, x + boxs, boxs, boxw, boxw,
-			// 	m == selmon && selmon->sel && selmon->sel->tags & 1 << i,
-			// 	urg & 1 << i);
-		// }
 		x += w;
 	}
 	w = TEXTW(m->ltsymbol);
@@ -744,8 +739,6 @@ drawbar(Monitor *m)
 		if (m->sel) {
 			drw_setscheme(drw, scheme[SchemeNorm]);
 			drw_text(drw, x, 0, w, bh, lrpad / 2, m->sel->name, 0);
-			// if (m->sel->isfloating)
-				// drw_rect(drw, x + boxs, boxs, boxw, boxw, m->sel->isfixed, 0);
 		} else {
 			drw_setscheme(drw, scheme[SchemeNorm]);
 			drw_rect(drw, x, 0, w, bh, 1, 1);
@@ -2004,6 +1997,10 @@ updatetitle(Client *c)
 		gettextprop(c->win, XA_WM_NAME, c->name, sizeof c->name);
 	if (c->name[0] == '\0') /* hack to mark broken clients */
 		strcpy(c->name, broken);
+
+	/* draw elipsis if title is truncated */
+	if (strlen(c->name) >= lentitle)
+		strncpy(&c->name[lentitle - 4], "...", 4);
 }
 
 void
