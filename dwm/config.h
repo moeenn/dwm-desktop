@@ -6,7 +6,6 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const int barpadding			= 23;
-static const int lentitle			= 60;		/* max 256 */
 static const char *fonts[]          = { "JetBrains Mono:size=10" };
 static const char fg_dull[]       	= "#707880";
 static const char bg_norm[]       	= "#232323";
@@ -66,7 +65,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] 		= { "dmenu_run", NULL };
-static const char *termcmd[]  		= { "st", NULL };
+static const char *termcmd[]  		= { "alacritty", NULL };
 static const char *lockcmd[]  		= { "i3lock", "-c", "000000", NULL };
 static const char *filecmd[]  		= { "thunar", NULL };
 static const char *brightupcmd[]  	= { "xbacklight", "-inc", "5", NULL };
