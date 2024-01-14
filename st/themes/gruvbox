@@ -1,0 +1,33 @@
+static const char *colorname[] = {
+	"#2B2B27", /* black   */
+	"#CC241D", /* red     */
+	"#98971A", /* green   */
+	"#D79921", /* yellow  */
+	"#458588", /* blue    */
+	"#B16286", /* magenta */
+	"#689D6A", /* cyan    */
+	"#EAE5D6", /* white   */
+
+	"#706955", /* black   */
+	"#FB4934", /* red     */
+	"#B8BB26", /* green   */
+	"#FABD2F", /* yellow  */
+	"#83A598", /* blue    */
+	"#D3869B", /* magenta */
+	"#8EC07C", /* cyan    */
+	"#EAE5D6", /* white   */
+
+ 	[255] = 0,
+
+	"#EBDBB2", /* default foreground colour */
+	"#1f1f1c", /* default background colour */
+};
+
+/*
+ * Default colors (colorname index)
+ * foreground, background, cursor
+ */
+unsigned int defaultfg = 256;
+unsigned int defaultbg = 257;
+static unsigned int defaultcs = 256;
+static unsigned int defaultrcs = 257;

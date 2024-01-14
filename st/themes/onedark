@@ -1,0 +1,24 @@
+static const char *colorname[] = {
+	"#2C323C", /* black   */
+	"#fa565c", /* red     */
+	"#98c379", /* green   */
+	"#e5c07b", /* yellow  */
+	"#61afef", /* blue    */
+	"#c678dd", /* magenta */
+	"#56b6c2", /* cyan    */
+	"#abb2bf", /* white   */
+
+	"#3F4957", /* black   */
+	"#e06c75", /* red     */
+	"#98c379", /* green   */
+	"#e5c07b", /* yellow  */
+	"#61afef", /* blue    */
+	"#c678dd", /* magenta */
+	"#56b6c2", /* cyan    */
+	"#abb2bf", /* white   */
+
+ 	[255] = 0,
+
+	"#abb2bf", /* default foreground colour */
+	"#1f2227", /* default background colour */
+};
