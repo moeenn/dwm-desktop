@@ -7,24 +7,14 @@
 // #include <alsa/asoundlib.h>
 // #include <alsa/control.h>
 
+#define HAS_BATTERY 0
+
 static Display *dpy;
 
 void setstatus(char *str) {
   XStoreName(dpy, DefaultRootWindow(dpy), str);
   XSync(dpy, False);
 }
-
-// int readInt(char *input) {
-//     FILE *fd;
-//     int val;
-
-//     fd = fopen(input, "r");
-//     if (fd==NULL)
-//         return -1;
-//     fscanf(fd, "%d", &val);
-//     fclose(fd);
-//     return val;
-// }
 
 int separator(char *status, size_t size) {
   return snprintf(status, size, " • ");
@@ -40,10 +30,11 @@ int getdatetime(char *status, size_t size) {
   return strftime(status, size, " %b %d, %H:%M  ", resulttm);
 }
 
+#if HAS_BATTERY == 1
 int getbattery(char *status, size_t size) {
   FILE *fd;
   int now, full, bat;
-  char stat[12];
+  char stat[15];
 
   fd = fopen("/sys/class/power_supply/BAT0/charge_now", "r");
   fscanf(fd, "%d", &now);
@@ -62,6 +53,7 @@ int getbattery(char *status, size_t size) {
              ? snprintf(status, size, " %s %d%% ", "♥", bat)
              : snprintf(status, size, " %s %d%%+ ", "♥", bat);
 }
+#endif
 
 // int
 // get_vol(void)
@@ -104,10 +96,13 @@ int main(void) {
   }
 
   for (;; sleep(delay)) {
+#if HAS_BATTERY == 1
     l = getbattery(status, sizeof(status) - l);
     l += separator(status + l, sizeof(status) - l);
     l += getdatetime(status + l, sizeof(status) - l);
-
+#else
+    l += getdatetime(status, sizeof(status) - l);
+#endif
     setstatus(status);
   }
 
