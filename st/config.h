@@ -96,28 +96,28 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	"#474539", /* black   */
-	"#F92672", /* red     */
-	"#A6E22E", /* green   */
-	"#F4BF75", /* yellow  */
-	"#66D9EF", /* blue    */
-	"#AE81FF", /* magenta */
-	"#A1EFE4", /* cyan    */
-	"#F8F8F2", /* white   */
+	"#141313", /* black   */
+	"#7D383F", /* red     */
+	"#7E9037", /* green   */
+	"#CAA249", /* yellow  */
+	"#665C5A", /* blue    */
+	"#6C3442", /* magenta */
+	"#4F6D65", /* cyan    */
+	"#ABABAB", /* white   */
 
-	"#5C594A", /* black   */
-	"#F92672", /* red     */
-	"#A6E22E", /* green   */
-	"#F4BF75", /* yellow  */
-	"#66D9EF", /* blue    */
-	"#AE81FF", /* magenta */
-	"#A1EFE4", /* cyan    */
-	"#F8F8F2", /* white   */
+	"#393637", /* black   */
+	"#AB5F5F", /* red     */
+	"#C0BD6B", /* green   */
+	"#76715C", /* yellow  */
+	"#848A8B", /* blue    */
+	"#89636B", /* magenta */
+	"#68AB88", /* cyan    */
+	"#AAAA91", /* white   */
 
  	[255] = 0,
 
-	"#F4F0E2", /* default foreground colour */
-	"#272822", /* default background colour */
+	"#ABAAAA", /* default foreground colour */
+	"#171717", /* default background colour */
 };
 
 /*
