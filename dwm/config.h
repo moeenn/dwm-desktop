@@ -12,12 +12,11 @@ static const char bg_norm[] = "#32332B";
 static const char fg_norm[] = "#F2F0DA";
 static const char accent[] = "#A6E22E";
 static const char bg_sel[] = "#474539";
-static const char *colors[][3] =
-    {
-        /*               	fg         		bg border   */
-        [SchemeNorm] = {fg_norm, bg_norm, bg_norm},
-        [SchemeSel] = {accent, bg_sel, bg_norm},
-        [SchemeDull] = {fg_dull, bg_norm, bg_norm},
+static const char *colors[][3] = {
+    /*               	fg         		bg border   */
+    [SchemeNorm] = {fg_norm, bg_norm, bg_norm},
+    [SchemeSel] = {accent, bg_sel, bg_norm},
+    [SchemeDull] = {fg_dull, bg_norm, bg_norm},
 };
 
 /* tagging */
@@ -29,8 +28,8 @@ static const Rule rules[] = {
      *	WM_NAME(STRING) = title
      *  tag mask value of '1 << 4' means window will open on tag on 5 (index 4)
      */
-    /* class      			instance    	title       tags mask     isfloating
-       monitor */
+    /* class      			instance    	title       tags mask
+       isfloating monitor */
     {"Gcolor3", NULL, NULL, 0, 1, -1},
     {"Gnome-screenshot", NULL, NULL, 0, 1, -1},
     {"Pavucontrol", NULL, NULL, 0, 1, -1},
@@ -72,7 +71,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = {"dmenu_run", NULL};
-static const char *termcmd[] = {"st", NULL};
+static const char *termcmd[] = {"alacritty", NULL};
 static const char *lockcmd[] = {"i3lock", "-c", "000000", NULL};
 static const char *filecmd[] = {"thunar", NULL};
 static const char *brightupcmd[] = {"xbacklight", "-inc", "5", NULL};
@@ -89,8 +88,8 @@ static const char *scrotcmd[] = {"gnome-screenshot", "-i", NULL};
 static const char *nullcmd[] = {"echo", ">", "/dev/null", NULL};
 
 static const Key keys[] = {
-    /* modifier                     key        						function
-       argument */
+    /* modifier                     key
+       function argument */
     {MODKEY, XK_p, spawn, {.v = dmenucmd}},
     {WINKEY, XK_t, spawn, {.v = termcmd}},
     {WINKEY, XK_e, spawn, {.v = filecmd}},
