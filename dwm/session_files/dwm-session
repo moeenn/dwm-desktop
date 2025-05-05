@@ -17,7 +17,7 @@ compton &
 $HOME/.fehbg &
 
 # set warn screen colors
-redshift -O 4200 &
+redshift -O 4800 &
 
 # window manager and status bar
 dwmstatus &
