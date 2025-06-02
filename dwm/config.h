@@ -1,21 +1,23 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx = 0; /* border pixel of windows */
+static const unsigned int borderpx = 2; /* border pixel of windows */
 static const unsigned int snap = 32;    /* snap pixel */
 static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 0;            /* 0 means bottom bar */
-static const int barpadding = 23;
-static const char *fonts[] = {"Cascadia Code:size=10"};
-static const char fg_dull[] = "#45595E";
-static const char bg_norm[] = "#EEE8D5";
-static const char fg_norm[] = "#45595E";
-static const char fg_sel[] = "#45595E";
-static const char bg_sel[] = "#CFC9B9";
+static const int barpadding = 14;
+static const char *fonts[] = {"JetBrains Mono:size=10"};
+static const char fg_dull[] = "#5e5a59";
+static const char bg_norm[] = "#1d1817";
+static const char fg_norm[] = "#d5d2ca";
+static const char fg_sel[] = "#1d1817";
+static const char bg_sel[] = "#fcbb2b";
+static const char border_norm[] = "#5a5857";
+static const char border_sel[] = "#e7c26f";
 static const char *colors[][3] = {
     /*               	fg         		bg         		border   */
-    [SchemeNorm] = {fg_norm, bg_norm, bg_norm},
-    [SchemeSel] = {fg_sel, bg_sel, bg_norm},
+    [SchemeNorm] = {fg_norm, bg_norm, border_norm},
+    [SchemeSel] = {fg_sel, bg_sel, border_sel},
     [SchemeDull] = {fg_dull, bg_norm, bg_norm},
 };
 

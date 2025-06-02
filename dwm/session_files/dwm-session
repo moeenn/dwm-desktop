@@ -13,8 +13,8 @@ compton &
 #pulseaudio -D &
 
 # wallpaper
-# hsetroot -solid "#000000" &		 	
-$HOME/.fehbg &
+xsetroot -solid "#131212" &		 	
+# $HOME/.fehbg &
 
 # set warn screen colors
 redshift -O 4800 &

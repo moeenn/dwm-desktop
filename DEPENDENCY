@@ -1,0 +1,6 @@
+libX11-devel
+xorg-x11-proto-devel
+harfbuzz
+libXft-devel
+libXinerama-devel
+xorg-x11-server-Xephyr
