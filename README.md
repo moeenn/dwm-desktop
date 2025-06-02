@@ -13,3 +13,10 @@ The following tools and cli-applications can be seen in the above screenshots
 * Startmenu - Dzen2 based startmenu with customizable shortcuts
 * BWM-NG - Network Bandwidth Monitor
 * Htop - Process monitor
+
+
+## Debugging DWM
+
+```bash
+$ ./session/clutch.sh --run
+```

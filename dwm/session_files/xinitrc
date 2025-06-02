@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# basic xorg session settings
+xrdb ~/.Xresources &
+
+# set typing repeat rate
+xset r rate 300 50 &
+
+# wallpaper
+xsetroot -solid "#131212" &		 	
+
+# set warn screen colors
+redshift -O 5000 &
+
+# window manager and status bar
+dwmstatus &
+exec dwm

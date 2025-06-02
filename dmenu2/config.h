@@ -2,12 +2,12 @@ static int topbar = 1;
 static int fuzzy = 1;
 static int centered = 1;
 static int min_width = 550;
-static const char *fonts[] = {"Ubuntu Mono:size=11"};
+static const char *fonts[] = {"JetBrains Mono:size=9"};
 static const char *prompt = NULL;
 static const char *colors[SchemeLast][2] = {
     /* fg       bg       */
-    [SchemeNorm] = {"#45595E", "#EEE8D5"},
-    [SchemeSel] = {"#45595E", "#CFC9B9"},
+    [SchemeNorm] = {"#d5d2ca", "#1d1817"},
+    [SchemeSel] = {"#1d1817", "#fcbb2b"},
     [SchemeOut] = {"#000000", "#00ffff"},
 };
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */

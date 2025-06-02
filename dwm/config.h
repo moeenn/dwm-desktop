@@ -1,11 +1,10 @@
-/* See LICENSE file for copyright and license details. */
-
 /* appearance */
 static const unsigned int borderpx = 2; /* border pixel of windows */
 static const unsigned int snap = 32;    /* snap pixel */
 static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 0;            /* 0 means bottom bar */
 static const int barpadding = 14;
+static const unsigned int gappx = 8; /* gaps between windows */
 static const char *fonts[] = {"JetBrains Mono:size=10"};
 static const char fg_dull[] = "#5e5a59";
 static const char bg_norm[] = "#1d1817";
@@ -22,7 +21,7 @@ static const char *colors[][3] = {
 };
 
 /* tagging */
-static const char *tags[] = {"1", "2", "3", "4", "5", "6"};
+static const char *tags[] = {"1", "2", "3", "4"};
 
 static const Rule rules[] = {
     /* xprop(1):
@@ -31,13 +30,9 @@ static const Rule rules[] = {
      *  tag mask value of '1 << 4' means window will open on tag on 5 (index 4)
      */
     /* class      			instance    	title       tags mask     isfloating   monitor */
-    {"Gcolor3", NULL, NULL, 0, 1, -1},
-    {"Gnome-screenshot", NULL, NULL, 0, 1, -1},
-    {"Pavucontrol", NULL, NULL, 0, 1, -1},
-    {"Lxrandr", NULL, NULL, 0, 1, -1},
-    {"WebWork Tracker", NULL, NULL, 1 << 5, 1, -1},
+    {"Gcolor3", NULL, NULL, 0, 1, -1},      {"Gnome-screenshot", NULL, NULL, 0, 1, -1},
+    {"Pavucontrol", NULL, NULL, 0, 1, -1},  {"Lxrandr", NULL, NULL, 0, 1, -1},
     {"Lxappearance", NULL, NULL, 0, 1, -1},
-    {"Matplotlib", NULL, NULL, 0, 1, -1},
 };
 
 /* layout(s) */
@@ -48,8 +43,8 @@ static const int lockfullscreen = 0; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
     /* symbol     arrange function */
-    {"(M)", monocle},
     {"(=)", tile}, /* first entry is default */
+    {"(M)", monocle},
     {"(~)", NULL}, /* no layout function means floating behavior */
 };
 
@@ -72,7 +67,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = {"dmenu_run", NULL};
-static const char *termcmd[] = {"gnome-terminal", NULL};
+static const char *termcmd[] = {"st", NULL};
 static const char *lockcmd[] = {"i3lock", "-c", "000000", NULL};
 // static const char *filecmd[]  		= { "thunar", NULL };
 // static const char *brightupcmd[]  	= { "xbacklight", "-inc", "5", NULL };
@@ -82,13 +77,11 @@ static const char *lockcmd[] = {"i3lock", "-c", "000000", NULL};
 // static const char *volmutecmd[] 		= { "amixer", "-D", "pulse", "sset", "Master", "toggle", NULL };
 // static const char *micmutecmd[] 		= { "amixer", "set", "Capture", "toggle", NULL };
 static const char *killcmd[] = {"xkill", NULL};
-// static const char *scrotcmd[]  		= { "gnome-screenshot", "-i", NULL };
-static const char *nullcmd[] = {"echo", ">", "/dev/null", NULL};
 
 static const Key keys[] = {
     /* modifier                     key        						function        	argument */
     {MODKEY, XK_p, spawn, {.v = dmenucmd}},
-    {WINKEY, XK_t, spawn, {.v = termcmd}},
+    {MODKEY, XK_t, spawn, {.v = termcmd}},
     //	{ WINKEY,                       XK_e,      						spawn,          	{.v = filecmd } },
     {WINKEY, XK_l, spawn, {.v = lockcmd}},
     //	{ 0,                       		XF86XK_MonBrightnessUp,     	spawn,          	{.v = brightupcmd } },
@@ -101,7 +94,6 @@ static const Key keys[] = {
     //	{ 0,                       		XF86XK_AudioMicMute,   	spawn,          	{.v = micmutecmd } },
     {MODKEY | ShiftMask, XK_Delete, spawn, {.v = killcmd}},
     //	{ 0,                            XK_Print,     					spawn,	        	{.v = scrotcmd } },
-    {ControlMask, XK_semicolon, spawn, {.v = nullcmd}},
     {MODKEY, XK_b, togglebar, {0}},
     {MODKEY, XK_Tab, focusstack, {.i = +1}},
     {MODKEY, XK_equal, incnmaster, {.i = +1}},
@@ -119,9 +111,8 @@ static const Key keys[] = {
     {MODKEY, XK_period, focusmon, {.i = +1}},
     {MODKEY | ShiftMask, XK_comma, tagmon, {.i = -1}},
     {MODKEY | ShiftMask, XK_period, tagmon, {.i = +1}},
-    TAGKEYS(XK_1, 0) TAGKEYS(XK_2, 1) TAGKEYS(XK_3, 2) TAGKEYS(XK_4, 3) TAGKEYS(XK_5, 4)
-        TAGKEYS(XK_6, 5){MODKEY | ShiftMask, XK_q, quit, {0}},
-};
+    {MODKEY | ShiftMask, XK_q, quit, {0}},
+    TAGKEYS(XK_1, 0) TAGKEYS(XK_2, 1) TAGKEYS(XK_3, 2) TAGKEYS(XK_4, 3)};
 
 /* button definitions */
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */

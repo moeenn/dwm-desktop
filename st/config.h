@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrains Mono:Regular:size=9";
+static char *font = "JetBrains Mono:Regular:size=10";
 static int borderpx = 8;
 
 /*
@@ -107,8 +107,8 @@ static const char *colorname[] = {
     [7] = "#a89984", /* white   */
 
     /* 8 bright colors */
-    [8]  = "#928374", /* black   */
-    [9]  = "#fb4934", /* red     */
+    [8] = "#928374",  /* black   */
+    [9] = "#fb4934",  /* red     */
     [10] = "#b8bb26", /* green   */
     [11] = "#fabd2f", /* yellow  */
     [12] = "#83a598", /* blue    */
