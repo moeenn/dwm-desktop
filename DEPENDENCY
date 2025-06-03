@@ -4,3 +4,8 @@ harfbuzz
 libXft-devel
 libXinerama-devel
 xorg-x11-server-Xephyr
+xorg-x11-drivers
+xorg-x11-xinit
+i3lock
+xsetroot
+lxappearance

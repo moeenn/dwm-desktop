@@ -81,7 +81,7 @@ static const char *killcmd[] = {"xkill", NULL};
 static const Key keys[] = {
     /* modifier                     key        						function        	argument */
     {MODKEY, XK_p, spawn, {.v = dmenucmd}},
-    {MODKEY, XK_t, spawn, {.v = termcmd}},
+    {WINKEY, XK_t, spawn, {.v = termcmd}},
     //	{ WINKEY,                       XK_e,      						spawn,          	{.v = filecmd } },
     {WINKEY, XK_l, spawn, {.v = lockcmd}},
     //	{ 0,                       		XF86XK_MonBrightnessUp,     	spawn,          	{.v = brightupcmd } },
