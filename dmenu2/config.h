@@ -6,9 +6,9 @@ static const char *fonts[] = {"Roboto:size=9"};
 static const char *prompt = NULL;
 static const char *colors[SchemeLast][2] = {
     /* fg       bg       */
-    [SchemeNorm] = {"#202020", "#f5f5f5"},
-    [SchemeSel] = {"#202020", "#ededed"},
-    [SchemeOut] = {"#c7c7c7", "#c7c7c7"}, // border.
+    [SchemeNorm] = {"#202020", "#f6f5f4"},
+    [SchemeSel] = {"#202020", "#d6d1cd"},
+    [SchemeOut] = {"#cdc7c2", "#cdc7c2"}, // border.
 };
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines = 7;
