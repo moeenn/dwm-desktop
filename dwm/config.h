@@ -5,7 +5,7 @@ static const int showbar = 1;           /* 0 means no bar */
 static const int topbar = 0;            /* 0 means bottom bar */
 static const int barpadding = 14;
 static const unsigned int gappx = 8; /* gaps between windows */
-static const char *fonts[] = {"JetBrains Mono:size=10"};
+static const char *fonts[] = {"Roboto:size=10"};
 static const char fg_dull[] = "#5e5a59";
 static const char bg_norm[] = "#1d1817";
 static const char fg_norm[] = "#d5d2ca";
@@ -30,8 +30,10 @@ static const Rule rules[] = {
      *  tag mask value of '1 << 4' means window will open on tag on 5 (index 4)
      */
     /* class      			instance    	title       tags mask     isfloating   monitor */
-    {"Gcolor3", NULL, NULL, 0, 1, -1},      {"Gnome-screenshot", NULL, NULL, 0, 1, -1},
-    {"Pavucontrol", NULL, NULL, 0, 1, -1},  {"Lxrandr", NULL, NULL, 0, 1, -1},
+    {"Gcolor3", NULL, NULL, 0, 1, -1},      
+    {"Gnome-screenshot", NULL, NULL, 0, 1, -1},
+    {"Pavucontrol", NULL, NULL, 0, 1, -1},  
+    {"Lxrandr", NULL, NULL, 0, 1, -1},
     {"Lxappearance", NULL, NULL, 0, 1, -1},
 };
 
@@ -67,7 +69,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static const char *dmenucmd[] = {"dmenu_run", NULL};
-static const char *termcmd[] = {"st", NULL};
+static const char *termcmd[] = {"alacritty", NULL};
 static const char *lockcmd[] = {"i3lock", "-c", "000000", NULL};
 // static const char *filecmd[]  		= { "thunar", NULL };
 // static const char *brightupcmd[]  	= { "xbacklight", "-inc", "5", NULL };
@@ -81,9 +83,9 @@ static const char *killcmd[] = {"xkill", NULL};
 static const Key keys[] = {
     /* modifier                     key        						function        	argument */
     {MODKEY, XK_p, spawn, {.v = dmenucmd}},
-    {WINKEY, XK_t, spawn, {.v = termcmd}},
+    {MODKEY, XK_t, spawn, {.v = termcmd}},
     //	{ WINKEY,                       XK_e,      						spawn,          	{.v = filecmd } },
-    {WINKEY, XK_l, spawn, {.v = lockcmd}},
+    {MODKEY, XK_l, spawn, {.v = lockcmd}},
     //	{ 0,                       		XF86XK_MonBrightnessUp,     	spawn,          	{.v = brightupcmd } },
     //	{ 0,                       		XF86XK_MonBrightnessDown,   	spawn,          	{.v = brightdowncmd } },
 
