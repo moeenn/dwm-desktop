@@ -2,13 +2,13 @@ static int topbar = 1;
 static int fuzzy = 1;
 static int centered = 1;
 static int min_width = 550;
-static const char *fonts[] = {"Go:size=9"};
+static const char *fonts[] = {"Fira Sans:size=9"};
 static const char *prompt = NULL;
 static const char *colors[SchemeLast][2] = {
     /* fg       bg       */
-    [SchemeNorm] = {"#202020", "#f6f5f4"},
-    [SchemeSel] = {"#202020", "#d6d1cd"},
-    [SchemeOut] = {"#cdc7c2", "#cdc7c2"}, // border.
+    [SchemeNorm] = {"#eff8f8", "#2d2d2d"},
+    [SchemeSel] = {"#eff8f8", "#15539e"},
+    [SchemeOut] = {"#1b1b1b", "#1b1b1b"}, // border.
 };
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines = 7;

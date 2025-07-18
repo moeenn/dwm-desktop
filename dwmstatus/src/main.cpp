@@ -8,7 +8,7 @@
 namespace config
 {
 static constexpr std::chrono::duration sleep_duration = std::chrono::seconds(5);
-static constexpr const char *time_format = "  %b %d, %H:%M  ";
+static constexpr const char *time_format = "  %b %d  -  %H:%M  ";
 } // namespace config
 
 void set_status(Display *display, const std::string &status)
