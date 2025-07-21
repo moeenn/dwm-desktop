@@ -68,7 +68,7 @@ static const Layout layouts[] = {
 /* commands */
 static const char *dmenucmd[] = {"dmenu_run", NULL};
 static const char *termcmd[] = {"alacritty", NULL};
-static const char *lockcmd[] = {"i3lock", "-c", "000000", NULL};
+static const char *lockcmd[] = {"i3lock", "-c", "000000", "-d", NULL};
 static const char *filecmd[] = {"thunar", NULL};
 static const char *brightupcmd[] = {"xbacklight", "-inc", "5", NULL};
 static const char *brightdowncmd[] = {"xbacklight", "-dec", "5", NULL};
@@ -83,7 +83,7 @@ static const Key keys[] = {
     {MODKEY, XK_p, spawn, {.v = dmenucmd}},
     {WINKEY, XK_t, spawn, {.v = termcmd}},
     {WINKEY, XK_e, spawn, {.v = filecmd}},
-    {MODKEY, XK_l, spawn, {.v = lockcmd}},
+    {WINKEY, XK_l, spawn, {.v = lockcmd}},
     {0, XF86XK_MonBrightnessUp, spawn, {.v = brightupcmd}},
     {0, XF86XK_MonBrightnessDown, spawn, {.v = brightdowncmd}},
     {0, XF86XK_AudioMute, spawn, {.v = volmutecmd}},
