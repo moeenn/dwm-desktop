@@ -1,8 +1,6 @@
-libX11-devel
-xorg-x11-proto-devel
-harfbuzz
+libx11-dev
+libharfbuzz-dev
 libxft-dev
 libxinerama-dev
-xorg-x11-server-Xephyr
-xorg-x11-drivers
-xorg-x11-xinit
+xserver-xephyr
+xinit
