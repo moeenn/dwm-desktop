@@ -5,19 +5,18 @@
 #include <iostream>
 #include <thread>
 
-namespace config
-{
+namespace config {
 static constexpr std::chrono::duration sleep_duration = std::chrono::seconds(5);
-static constexpr const char *time_format = "  %b %d  -  %H:%M  ";
+static constexpr const char* time_format = "  %B %d  -  %H:%M  ";
 } // namespace config
 
-void set_status(Display *display, const std::string &status)
+void set_status(Display* display, const std::string& status)
 {
     XStoreName(display, DefaultRootWindow(display), status.c_str());
     XSync(display, false);
 }
 
-void current_time(std::string &out)
+void current_time(std::string& out)
 {
     auto now = std::chrono::system_clock::now();
     std::time_t time_now = std::chrono::system_clock::to_time_t(now);
@@ -30,17 +29,15 @@ void current_time(std::string &out)
 
 int main()
 {
-    Display *display;
-    if (!(display = XOpenDisplay(NULL)))
-    {
+    Display* display;
+    if (!(display = XOpenDisplay(NULL))) {
         std::cerr << "error: failed to open display\n";
         return 1;
     }
 
     std::string time;
 
-    while (true)
-    {
+    while (true) {
         current_time(time);
         set_status(display, time);
         std::this_thread::sleep_for(config::sleep_duration);
