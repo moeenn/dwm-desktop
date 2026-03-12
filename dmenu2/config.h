@@ -2,13 +2,13 @@ static int topbar = 1;
 static int fuzzy = 1;
 static int centered = 1;
 static int min_width = 550;
-static const char* fonts[] = { "Roboto Medium:size=9" };
+static const char* fonts[] = { "JetBrains Mono:size=9" };
 static const char* prompt = NULL;
 static const char* colors[SchemeLast][2] = {
     /* fg       bg       */
-    [SchemeNorm] = { "#2e3436", "#ffffff" },
-    [SchemeSel] = { "#f9fcfe", "#3584e4" },
-    [SchemeOut] = { "#d7d7d7", "#d7d7d7" }, // border.
+    [SchemeNorm] = { "#ffffff", "#1a1a1a" },
+    [SchemeSel] = { "#ffffff", "#2b2b2b" },
+    [SchemeOut] = { "#ffffff", "#1a1a1a" }, // border.
 };
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
 static unsigned int lines = 7;
